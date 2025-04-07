@@ -1,3 +1,11 @@
+#Champ Cain
+#MAE 3404
+#HW 8
+
+# I know this one is all sorts of jacked up. I restarted it twice and still wound up with the same error
+# I cannot find where the my inputs are getting multiplied by 1000. AI was practically useless in assisting me
+# identifying where the problem was occurring
+
 #region imports
 import sys
 from PyQt5 import QtWidgets as qtw
@@ -108,7 +116,7 @@ class MainWindow(qtw.QWidget, Ui_Form):
         try:
             SI = self.rb_SI.isChecked()
             # Convert input to kPa (steam tables use kPa)
-            PCF = 100 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
+            PCF = 1 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
             PHigh_text = self.le_PHigh.text()
 
             if not PHigh_text:
@@ -148,7 +156,7 @@ class MainWindow(qtw.QWidget, Ui_Form):
         try:
             SI = self.rb_SI.isChecked()
             # Convert input to kPa (steam tables use kPa)
-            PCF = 100 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
+            PCF = 1 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
             PLow_text = self.le_PLow.text()
 
             if not PLow_text:

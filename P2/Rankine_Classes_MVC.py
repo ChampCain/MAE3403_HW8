@@ -87,7 +87,7 @@ class rankineView():
                 if not PHigh_text:
                     return
 
-                PCF = 100 if SI else UC.psi_to_kpa  # Convert to kPa
+                PCF = 1 if SI else UC.psi_to_kpa  # Convert to kPa
                 PHigh = float(PHigh_text) * PCF
 
                 # Get saturation temperature at PHigh
@@ -122,7 +122,7 @@ class rankineView():
         try:
             SI = self.rb_SI.isChecked()
             # Convert input to kPa (steam tables use kPa)
-            PCF = 100 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
+            PCF = 1 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
             PHigh_text = self.le_PHigh.text()
 
             if not PHigh_text:
@@ -165,7 +165,7 @@ class rankineView():
         try:
             SI = self.rb_SI.isChecked()
             # Convert input to kPa (steam tables use kPa)
-            PCF = 100 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
+            PCF = 1 if SI else UC.psi_to_kpa  # bar->kPa or psi->kPa
             PLow_text = self.le_PLow.text()
 
             if not PLow_text:
